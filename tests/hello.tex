@@ -1,0 +1,53 @@
+% !TEX program = xelatex
+\documentclass{article}
+
+\usepackage{blindtext}
+\usepackage{geometry}
+\usepackage{calc}
+\usepackage{blindtext}
+\usepackage{fontspec}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\usepackage{polyglossia}
+\usepackage{hyperref}
+
+\geometry{%
+a4paper,
+margin = 1in}
+
+\setdefaultlanguage[numerals=arabic]{thai}
+\setotherlanguages{english}
+
+\XeTeXlinebreaklocale "th"
+\setmainfont{TH Sarabun New}
+\newfontfamily\thaifont[Script=Default]{TH Sarabun New}
+
+\title{\Huge\textbf{สวัสดี}\\
+\Large ชาวโลก\\
+\vspace{-4ex}}
+\date{อังคารที่ 19 มกราคม 2038, 03:14:07}
+
+\begin{document}
+\begin{titlepage}
+\maketitle
+\thispagestyle{empty}
+\tableofcontents
+\end{titlepage}
+
+\newpage
+\pagenumbering{arabic}
+\section{ส่วนแรก}
+\blindtext[12]
+
+\section{ส่วนถัดไป}
+\blindtext[12]
+
+\section{ส่วนสุดท้าย}
+\blindtext[12]
+
+\newpage
+\begin{center}
+\mbox{\Huge\textbf{อิ ๆ}}
+\end{center}
+
+\end{document}
