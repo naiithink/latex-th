@@ -1,10 +1,14 @@
 TEX_ENGINE = xelatex
+TEST_FILE := hello.pdf
 
-test: hello.pdf
+all: $(TEST_FILE)
 
-.PHONY: test clean .FORCE
+.PHONY: all test clean .FORCE
 
-%.pdf: %.tex
+test: $(TEST_FILE)
+	code $(TEST_FILE)
+
+%.pdf: %.tex .FORCE
 	$(TEX_ENGINE) $<
 	$(TEX_ENGINE) $<
 	$(TEX_ENGINE) $<

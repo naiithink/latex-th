@@ -1,6 +1,6 @@
 # TeX
 
-Docker + Ubuntu + texlive (APT package)
+Docker + Ubuntu image + texlive (APT package)
 
 ## เริ่มต้น
 
