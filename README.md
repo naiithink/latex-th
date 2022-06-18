@@ -2,6 +2,15 @@
 
 Docker + Ubuntu + texlive (APT package)
 
+## เริ่มต้น
+
+1. เปิด project นี้ด้วย VS Code
+1. ติดตั้ง extension `ms-vscode-remote.remote-containers`
+1. `Control / Command` + `Shift` + `P`
+1. แล้วเลือก command `Remote-Containers: Reopen in Container`  
+    ![reincon.png](../assets/reincon.png?raw=true)
+1. รอจน image build เสร็จ
+
 ## ทดสอบการติดตั้ง
 
 ```
