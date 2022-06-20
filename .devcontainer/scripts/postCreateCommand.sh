@@ -11,3 +11,8 @@ git config --global core.autocrlf input
 
 # Windows-only
 # git config --global core.autocrlf false
+
+echo '# Custom' >> ~/.bashrc
+echo 'export "PATH=/workspaces/tex/bin:$PATH"' >> ~/.bashrc
+echo '# Custom' >> ~/.zshrc
+echo 'export "PATH=/workspaces/tex/bin:$PATH"' >> ~/.zshrc

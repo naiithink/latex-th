@@ -1,0 +1,37 @@
+#!/usr/bin/env ruby
+# -*- coding: utf-8; mode: ruby; -*-
+
+=begin
+Status: incomplete, DO NOT run this file.
+=end
+
+require "psych"
+
+
+PROJECT_ROOT = "refs/root"
+
+def trans_ref(ref = "")
+    if !ref
+        return nil
+    else
+        
+    end
+end
+
+class Font
+    @@prefix = {
+        :cmd_scheme => "refs/scheme",
+        :sysfc => "refs/sysfc",
+        :usrfc => "refs/usrfc",
+        :fcsrc => "refs/fcsrc"
+    }
+
+    def get_manifest
+    end
+
+    def install
+    end
+end
+
+if File.exist?()
+end
