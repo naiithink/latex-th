@@ -2,29 +2,43 @@
 \documentclass{article}
 
 \usepackage{blindtext}
-\usepackage{geometry}
-\usepackage{calc}
-\usepackage{blindtext}
 \usepackage{fontspec}
+\usepackage{geometry}
 \usepackage{xunicode}
 \usepackage{xltxtra}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{multirow}
+\usepackage{listings}
 \usepackage{polyglossia}
 \usepackage{hyperref}
+
+\hypersetup{%
+colorlinks,
+linkcolor = red}
 
 \geometry{%
 a4paper,
 margin = 1in}
 
+\XeTeXlinebreaklocale "th"
 \setdefaultlanguage[numerals=arabic]{thai}
 \setotherlanguages{english}
 
-\XeTeXlinebreaklocale "th"
 \setmainfont{TH Sarabun New}
 \newfontfamily\thaifont[Script=Default]{TH Sarabun New}
 
-\title{\Huge\textbf{สวัสดี}\\
-\Large ชาวโลก\\
-\vspace{-4ex}}
+\lstset{%
+basicstyle = \ttfamilylatin,
+commentstyle = \color{olive},
+keywordstyle = \color{magenta},
+numbers = left,
+captionpos = b,
+belowcaptionskip = 1ex,
+frame = single}
+
+\title{\textbf{สวัสดี}\vspace{-2ex}}
+\author{ชาวโลก}
 \date{อังคารที่ 19 มกราคม 2038, 03:14:07}
 
 \begin{document}
@@ -37,17 +51,63 @@ margin = 1in}
 \newpage
 \pagenumbering{arabic}
 \section{ส่วนแรก}
-\blindtext[12]
+\begin{otherlanguage}{english}
+\blindtext[8]
+\end{otherlanguage}
 
 \section{ส่วนถัดไป}
-\blindtext[12]
-
-\section{ส่วนสุดท้าย}
-\blindtext[12]
+\begin{otherlanguage}{english}
+\blindtext[10]
+\end{otherlanguage}
 
 \newpage
-\begin{center}
-\mbox{\Huge\textbf{อิ ๆ}}
-\end{center}
+\section{ส่วนสุดท้าย}
+\subsection{สมการ}
+\begin{align*}
+x   &= 2^{31} - 1\\
+    &= 2,147,483,647
+\end{align*}
 
+\subsection{รูปภาพ}
+\begin{figure}[htp]
+\centering
+\includegraphics[width=0.5\textwidth]{images/happy_tue.jpeg}
+\caption[สวัสดีวันอังคาร]{สวัสดีวันอังคาร (ขอบคุณรูปจาก \href{https://xn--b3ctdq1erb0a6aq2a9k0e.com/}{สวัสดีตอนเช้า.com})}
+\end{figure}
+
+\subsection{ตาราง}
+\begin{table}[h!]
+\centering
+\begin{tabular}{c | c | c | c}
+\hline
+\multicolumn{3}{c |}{ASCII Number} & \multirow{2}{*}{Character}\\
+\cline{1-3}
+Dec & Hex & Oct & {}\\
+\hline
+65 & 41 & 101 & A\\
+66 & 42 & 102 & B\\
+67 & 43 & 103 & C\\
+\cline{1-4}
+\multicolumn{4}{c}{$\cdots$}\\
+\hline
+\end{tabular}
+\caption{อักขระ ASCII}
+\end{table}
+
+\pagebreak[4]
+\subsection{โค้ด}
+\subsubsection{จากไฟล์}
+\lstinputlisting[language=Python,caption=fibo.py]{sources/fibo.py}
+
+\subsubsection{จากสคริปต์}
+\begin{lstlisting}[language=Python,caption=Hello]
+# Prints "hello, world"
+print("hello, world")
+\end{lstlisting}
+
+\newpage
+\pagenumbering{gobble}
+\listoffigures
+\listoftables
+\lstlistoflistings
 \end{document}
