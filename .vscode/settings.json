@@ -1,7 +1,7 @@
 {
     // >>> "James-Yu.latex-workshop"
-    "latex-workshop.latex.build.forceRecipeUsage": false,
-    "latex-workshop.latex.autoBuild.run": "onSave",
+    "latex-workshop.latex.build.forceRecipeUsage": true,
+    "latex-workshop.latex.autoBuild.run": "never",
     "latex-workshop.latex.autoBuild.cleanAndRetry.enabled": true,
     "latex-workshop.view.pdf.viewer": "tab",
     "latex-workshop.latex.magic.args": [

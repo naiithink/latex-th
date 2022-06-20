@@ -151,7 +151,9 @@ $RECYCLE.BIN/
 *.aux
 *.lof
 *.log
+*.lol
 *.lot
+*.fdb_latexmk
 *.fls
 *.out
 *.toc
