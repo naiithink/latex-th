@@ -18,9 +18,9 @@ test: $(TEST_FILE)
 	@printf "Building 1/3\n"
 	@timeout 10 $(TEX_ENGINE) $< >/dev/null
 	@printf "\033[1K\033[1FBuilding 2/3\n"
-	@timeout 10 $(TEX_ENGINE) $<  >/dev/null
+	@timeout 10 $(TEX_ENGINE) $< >/dev/null
 	@printf "\033[1K\033[1FBuilding 3/3\n"
-	@timeout 10 $(TEX_ENGINE) $<  >/dev/null
+	@timeout 10 $(TEX_ENGINE) $< >/dev/null
 	@printf "\033[1;32m\033[1F\033[2KDone.\033[0m\n"
 
 config:
