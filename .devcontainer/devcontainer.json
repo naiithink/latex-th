@@ -2,27 +2,30 @@
 	"name": "TeX",
 	"build": {
 		"dockerfile": "Dockerfile",
-		"args": { "VARIANT": "ubuntu-22.04" }
-	},
-
-	"settings": {
-		"terminal.integrated.defaultProfile.linux": "zsh",
-		"terminal.integrated.profiles.linux": {
-			"bash": {
-				"path": "/usr/bin/bash",
-				"icon": "terminal-bash"
-			},
-			"zsh": {
-				"path": "/usr/bin/zsh"
-			}
+		"args": {
+			"VARIANT": "ubuntu-22.04"
 		}
 	},
-
-	"extensions": [
-		"ms-vscode-remote.remote-containers",
-		"James-Yu.latex-workshop"
-	],
-
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "zsh",
+				"terminal.integrated.profiles.linux": {
+					"bash": {
+						"path": "/usr/bin/bash",
+						"icon": "terminal-bash"
+					},
+					"zsh": {
+						"path": "/usr/bin/zsh"
+					}
+				}
+			},
+			"extensions": [
+				"ms-vscode-remote.remote-containers",
+				"James-Yu.latex-workshop"
+			]
+		}
+	},
 	// "forwardPorts": [],
 	"postCreateCommand": "sh ./.devcontainer/scripts/postCreateCommand.sh",
 	"remoteUser": "vscode"

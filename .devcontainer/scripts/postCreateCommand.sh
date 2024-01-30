@@ -11,3 +11,12 @@ git config --global core.autocrlf input
 
 # Windows-only
 # git config --global core.autocrlf false
+
+# Upgrade all Python packages
+python3 -m pip list --outdated --format freeze \
+        | awk 'BEGIN { FS = "==" } { print $1 }' \
+        | xargs python3 -m pip install --upgrade
+
+# Install required Python packages
+# This automatically calls the user space config/requirements.txt
+python3 -m pip install --requirement "_tex/config/requirements.txt"

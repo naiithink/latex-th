@@ -1,0 +1,6 @@
+# -*- coding: utf-8 -*-
+
+# 'minted' package
+Pygments >= 2.17.2
+
+-r ../../resources/config/requirements.txt

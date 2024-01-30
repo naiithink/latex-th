@@ -12,6 +12,32 @@
     ],
     "latex-workshop.latex.recipes": [
         {
+            "name": "xelatexsh × 3",
+            "tools": [
+                "xelatexsh",
+                "xelatexsh",
+                "xelatexsh"
+            ]
+        },
+        {
+            "name": "xelatex ➞ bibtex ➞ xelatex × 2",
+            "tools": [
+                "xelatex",
+                "bibtex",
+                "xelatex",
+                "xelatex"
+            ]
+        },
+        {
+            "name": "xelatexsh ➞ bibtex ➞ xelatexsh × 2",
+            "tools": [
+                "xelatexsh",
+                "bibtex",
+                "xelatexsh",
+                "xelatexsh"
+            ]
+        },
+        {
             "name": "latexmk 🔃",
             "tools": [
                 "latexmk"
@@ -62,12 +88,6 @@
             "name": "tectonic",
             "tools": [
                 "tectonic"
-            ]
-        },
-        {
-            "name": "xelatex",
-            "tools": [
-                "xelatex"
             ]
         }
     ],
@@ -166,6 +186,15 @@
             "name": "xelatex",
             "command": "xelatex",
             "args": [
+                "-pdf",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "xelatexsh",
+            "command": "xelatex",
+            "args": [
+                "-shell-escape",
                 "-pdf",
                 "%DOC%"
             ]

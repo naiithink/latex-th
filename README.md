@@ -1,44 +1,107 @@
-# TeX
+# $\TeX$
 
-Docker + Ubuntu image + texlive (APT package)
+> Docker + Ubuntu image + $\TeX$ Live (APT package)
+
+$\LaTeX$ Repository Template
+
+![tex-hero.png](_tex/assets/images/tex-hero.png)
 
 ## เริ่มต้น
 
-1. เปิด project นี้ด้วย VS Code
-1. ติดตั้ง extension `ms-vscode-remote.remote-containers`
-1. `Control / Command` + `Shift` + `P`
-1. แล้วเลือก command `Remote-Containers: Reopen in Container`  
-    ![reincon.png](../assets/reincon.png?raw=true)
-1. รอจน image build เสร็จ
+1.  สร้าง repository ใหม่โดยใช้ template นี้
+1.  เปิด repository ที่สร้างใหม่นี้ด้วย VS Code
+1.  ติดตั้ง VS Code extension `ms-vscode-remote.remote-containers`
+
+    > หากเปิดใช้งานคำสั่ง `code` สามารถใช้คำสั่ง:
+    >
+    >     $ code --install-extension ms-vscode-remote.remote-containers
+
+1.  เรียก command palette ด้วยคีย์ลัด <kbd><kbd>Control/Command</kbd> <kbd>Shift</kbd> <kbd>P</kbd></kbd>
+    แล้วเลือกคำสั่ง "Remote-Containers: Reopen in Container"
+
+    ![reincon.png](_tex/assets/images/reincon.png)
+
+1.  รอจน image ถูก build จนเสร็จ
 
 ## ทดสอบการติดตั้ง
 
-```
-$ cd tests
-$ make test
-```
+1.  เปิดไฟล์ทดสอบ `test/hello.tex`
 
-ควรจะได้ `hello.pdf`
+    > หากเปิดใช้งานคำสั่ง `code` สามารถใช้คำสั่ง:
+    >
+    >     $ code test/hello.tex
 
-## TeX ที่ (คาดว่า) จะใช้ได้ [^1]
+1.  Compile ไฟล์ทดสอบด้วยการกดปุ่ม run หรือคีย์ลัด <kbd><kbd>Control/Command</kbd> <kbd>Alternate/Option</kbd> <kbd>B</kbd></kbd>
+1.  หาก compile เสร็จสมบูรณ์ ควรจะได้ `test/hello.pdf` ที่ไม่ว่างเปล่า (not blank)
 
-- BibTeX
-- LaTeX
-- LuaTeX
-- XeLaTeX
+## การ Compile และการตั้งค่า Build Steps
 
-## Info
+### การ Compile
+
+โดยทั่วไป สามารถ compile ไฟล์ `.tex` ได้ผ่าน
+
+- Command Line Interface (CLI)
+- LaTeX-Workshop Magic Comments โดยเพิ่ม `% !TEX program = <program>` ใส่ในไฟล์ `.tex` สามารถดูข้อมูล Magic Comments ได้ที่ *LaTeX-Workshop (VS Code Extension)* ด้านล่าง
+- LaTeX-Workshop Recipe system (build steps)
+
+### การตั้งค่า Build Steps
+
+Template นี้อาศัย VS Code extension "LaTeX-Workshop" ในการจัดการขั้นตอนการ build
+
+- Recipe system มีลำดับความสำคัญเหนือกว่า Magic Comments
+- การสั่ง build สามารถทำได้หลายวิธี อย่างเช่น ด้วยการกดปุ่ม run หรือด้วยคีย์ลัด <kbd><kbd>Control/Command</kbd> <kbd>Alternate/Option</kbd> <kbd>B</kbd></kbd> เป็นต้น
+- สามารถตั้งค่าคำสั่งที่ต้องการให้ทำเมื่อ build ได้ที่ `<project root>/.vscode/settings.json`
+
+  - คำสั่งอย่างเช่น `pdflatex`, `xelatex`, หรือ `bibtex` จะถูกกำหนดที่ `"latex-workshop.latex.tools": []` โดยแต่ละคำสั่งจะถูกเรียกว่า Tool
+  - ขั้นตอนการ build จะถูกกำหนดที่ `"latex-workshop.latex.recipes": []` โดยขั้นตอนแต่ละแบบจะถูกเรียกว่า Recipe
+  - หนึ่ง Recipe คือหนึ่ง sequence ที่จะต้องประกอบด้วย $\ge$ หนึ่ง Tool ถึงจะทำงานได้
+  - ที่ `"latex-workshop.latex.recipes": []`, Recipe ที่อยู่ลำดับแรกสุดจะถูกเรียกเมื่อกดปุ่ม run หรือใช้คีย์ลัด <kbd><kbd>Control/Command</kbd> <kbd>Alternate/Option</kbd> <kbd>B</kbd></kbd>
+  - Tools และ Recipes ที่เตรียมไว้ให้เพิ่มเติมจากค่าเริ่มต้นมีดังนี้
+
+    ```json
+    {
+      "latex-workshop.latex.tools": [
+        {
+          // ใช้สำหรับเรียกคำสั่ง xelatex ด้วย option -shell-escape
+          "name": "xelatexsh",
+          "command": "xelatex",
+          "args": ["-shell-escape", "-pdf", "%DOC%"]
+        }
+      ],
+      "latex-workshop.latex.recipes": [
+        {
+          "name": "xelatex ➞ bibtex ➞ xelatex × 2",
+          "tools": ["xelatex", "bibtex", "xelatex", "xelatex"]
+        },
+        {
+          "name": "xelatexsh × 3",
+          "tools": ["xelatexsh", "xelatexsh", "xelatexsh"]
+        },
+        {
+          "name": "xelatexsh ➞ bibtex ➞ xelatexsh × 2",
+          "tools": ["xelatexsh", "bibtex", "xelatexsh", "xelatexsh"]
+        }
+      ]
+    }
+    ```
+
+- สามารถ clean up ไฟล์ intermediate ต่าง ๆ ได้ด้วยคีย์ลัด <kbd><kbd>Control/Command</kbd> <kbd>Alternate/Option</kbd> <kbd>C</kbd></kbd>
+
+## ข้อมูลเพิ่มเติม
 
 ### LaTeX-Workshop (VS Code Extension)
 
-#### Compiling features [[ref]](https://github.com/James-Yu/LaTeX-Workshop/wiki/Compile)
+#### Compiling Features [^1]
 
 เราสามารถเลือก $\TeX$ compiler ได้ผ่าน
 
-- recipe system  
-- เพิ่ม magic comment (`% !TEX program = <program>`) ใส่ในไฟล์ `.tex`  
-    โดย default เราไม่สามารถใช้ feature นี้ได้ เนื่องจาก extension นี้ถูกตั้งค่าให้ใช้ recipe system เพื่อ backward compatibility  
-    ถ้าเราต้องการใช้ magic comment:  
-    ใน `<project root>/.vscode/settings.json` ให้ตั้ง `"latex-workshop.latex.build.forceRecipeUsage"` เป็น `false`  
+- Recipe system (overrules Magic Comments)
+- เพิ่ม Magic Comment (`% !TEX program = <program>`) ใส่ในไฟล์ `.tex`  
+   โดยค่าเริ่มต้น เราจะไม่สามารถใช้ feature นี้ได้ เนื่องจาก extension นี้ถูกตั้งค่าให้ใช้ Recipe system เพื่อ backward compatibility เท่านั้น  
+   แต่ถ้าเราต้องการใช้ magic comment ให้:
 
-[^1]: TeX engine ที่รองรับขึ้นอยู่กับ [APT packages](https://packages.ubuntu.com/search?suite=default&section=all&arch=any&keywords=texlive&searchon=names)  
+  ใน `<project root>/.vscode/settings.json` ตั้ง `"latex-workshop.latex.build.forceRecipeUsage": ""` เป็น `false`
+
+---
+
+[^1]: https://github.com/James-Yu/LaTeX-Workshop/wiki/Compile
