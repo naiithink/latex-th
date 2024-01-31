@@ -1,15 +1,16 @@
-% !TEX program = xelatex
 \documentclass{article}
 
 \usepackage{blindtext}
 \usepackage{fontspec}
 \usepackage{geometry}
+\usepackage[Latin,Thai]{ucharclasses}
 \usepackage{xunicode}
 \usepackage{xltxtra}
 \usepackage{amsmath}
 \usepackage{xcolor}
 \usepackage{multirow}
-\usepackage{listings}
+\usepackage{minted}
+% \usepackage{listings}
 \usepackage{polyglossia}
 \usepackage{hyperref}
 
@@ -22,20 +23,32 @@ a4paper,
 margin = 1in}
 
 \XeTeXlinebreaklocale "th"
-\setdefaultlanguage[numerals=arabic]{thai}
-\setotherlanguages{english}
+\setdefaultlanguage{english}
+\setotherlanguage[numerals=arabic]{thai}
 
+\newfontfamily{\thaifont}{TH Sarabun New}
 \setmainfont{TH Sarabun New}
-\newfontfamily\thaifont[Script=Default]{TH Sarabun New}
 
-\lstset{%
-basicstyle = \ttfamilylatin,
-commentstyle = \color{olive},
-keywordstyle = \color{magenta},
-numbers = left,
-captionpos = b,
-belowcaptionskip = 1ex,
-frame = single}
+\newenvironment{thailang}
+{\thaifont}
+{}
+
+\setTransitionTo{Thai}{\begin{thailang}}
+\setTransitionFrom{Thai}{\end{thailang}}
+
+\setminted{%
+fontfamily=tt,
+frame=lines,
+linenos=true}
+
+% \lstset{%
+% basicstyle = \ttfamilylatin,
+% commentstyle = \color{olive},
+% keywordstyle = \color{magenta},
+% numbers = left,
+% captionpos = b,
+% belowcaptionskip = 1ex,
+% frame = single}
 
 \title{\textbf{สวัสดี}\vspace{-2ex}}
 \author{ชาวโลก}
@@ -97,17 +110,17 @@ Dec & Hex & Oct & {}\\
 \pagebreak[4]
 \subsection{โค้ด}
 \subsubsection{จากไฟล์}
-\lstinputlisting[language=Python,caption=fibo.py]{sources/fibo.py}
+\inputminted{python}{sources/fibo.py}
 
 \subsubsection{จากสคริปต์}
-\begin{lstlisting}[language=Python,caption=Hello]
-# Prints "hello, world"
+\begin{minted}{python}
+# พรินต์ "hello, world"
 print("hello, world")
-\end{lstlisting}
+\end{minted}
 
 \newpage
 \pagenumbering{gobble}
 \listoffigures
 \listoftables
-\lstlistoflistings
+\listoflistings
 \end{document}

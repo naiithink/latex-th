@@ -1,4 +1,9 @@
 # -*- coding: utf-8; mode: text; -*-
+
+# The Template
+!_tex
+test/*.pdf
+
 # Binaries
 [._]bin/
 # bin/
