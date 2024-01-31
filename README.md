@@ -8,6 +8,23 @@ $\LaTeX$ Repository Template
 
 ## เริ่มต้น
 
+### GitHub Codespaces
+
+ใช้ template นี้บน cloud ด้วย GitHub Codespaces
+
+![tex-codespaces.png](_tex/assets/images/tex-codespaces.png)
+
+1. ที่ปุ่ม "Code" เลือกแถบ "Codespaces" แล้วเลือก "Create codespace on main"
+
+    ![setting-up-codespace-01.png](_tex/assets/images/setting-up-codespace-01.png)
+1. รอจน set up เสร็จแล้วเริ่มใช้งานได้เลย
+
+    ![setting-up-codespace-02.png](_tex/assets/images/setting-up-codespace-02.png)
+
+### Docker
+
+ใช้ template นี้บนคอมพิวเตอร์ของคุณเองด้วย Docker
+
 1.  สร้าง repository ใหม่โดยใช้ template นี้
 1.  เปิด repository ที่สร้างใหม่นี้ด้วย VS Code
 1.  ติดตั้ง VS Code extension `ms-vscode-remote.remote-containers`
