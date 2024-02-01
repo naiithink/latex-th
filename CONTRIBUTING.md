@@ -1,4 +1,4 @@
-# Contributing to $\TeX$
+# Contributing to $\rm{\LaTeX}$-th
 
 ## Repository Structure
 

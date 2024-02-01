@@ -1,4 +1,4 @@
-# tex Changelog
+# $\rm{\LaTeX}$-th Changelog
 
 ## 1.2.0
 
