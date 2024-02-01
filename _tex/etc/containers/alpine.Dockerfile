@@ -1,5 +1,4 @@
-ARG     VARIANT="alpine"
-FROM    mcr.microsoft.com/vscode/devcontainers/base:${VARIANT}
+FROM    alpine
 
 ARG     APK_OPTS="--no-cache"
 

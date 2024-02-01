@@ -1,11 +1,12 @@
 {
 	"name": "TeX",
-	"build": {
-		"dockerfile": "Dockerfile",
-		"args": {
-			"VARIANT": "ubuntu-22.04"
-		}
-	},
+	"image": "naiithink/latex-th:1.2.0",
+	// "build": {
+	// 	"dockerfile": "Dockerfile",
+	// 	"args": {
+	// 		"VARIANT": "alpine"
+	// 	}
+	// },
 	"customizations": {
 		"vscode": {
 			"settings": {

@@ -1,5 +1,16 @@
 # tex Changelog
 
+## 1.2.0
+
+### Changes
+
+- Switched to `alpine` image
+- Improved build times: newer containers are now built from the base [pre-built images](https://hub.docker.com/r/naiithink/latex-th)
+- Renamed directories
+  - Renamed `resources/` to `_resources/` to distinguish the template resources from user working resources
+  - Renamed `test/` to `_test/`, freeing the template from bloating working directories
+- Due to package management limitations, temporarily freezing the use of `_resources/config/requirements.txt` until a workaround is found
+
 ## 1.1.0
 
 ### Changes
@@ -16,7 +27,6 @@
 ### Container preparation
 
 - Replaced all `*tex*` packages with the all-in-one `texlive-full`
-
 
 ## 1.0.0
 

@@ -3,4 +3,4 @@
 # 'minted' package
 Pygments >= 2.17.2
 
--r ../../resources/config/requirements.txt
+-r ../../_resources/config/requirements.txt

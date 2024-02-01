@@ -1,0 +1,2 @@
+# -*- coding: utf-8 -*-
+# WARNING: this file is temporarily disabled

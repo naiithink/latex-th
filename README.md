@@ -42,14 +42,14 @@ $\LaTeX$ Repository Template
 
 ## ทดสอบการติดตั้ง
 
-1.  เปิดไฟล์ทดสอบ `test/hello.tex`
+1.  เปิดไฟล์ทดสอบ `_test/hello.tex`
 
     > หากเปิดใช้งานคำสั่ง `code` สามารถใช้คำสั่ง:
     >
-    >     $ code test/hello.tex
+    >     $ code _test/hello.tex
 
 1.  Compile ไฟล์ทดสอบด้วยการกดปุ่ม run หรือคีย์ลัด <kbd><kbd>Control/Command</kbd> <kbd>Alternate/Option</kbd> <kbd>B</kbd></kbd>
-1.  หาก compile เสร็จสมบูรณ์ ควรจะได้ `test/hello.pdf` ที่ไม่ว่างเปล่า (not blank)
+1.  หาก compile เสร็จสมบูรณ์ ควรจะได้ `_test/hello.pdf` ที่ไม่ว่างเปล่า (not blank)
 
 ## การ Compile และการตั้งค่า Build Steps
 
