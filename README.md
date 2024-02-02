@@ -8,9 +8,9 @@ $\rm{\LaTeX}$ Repository Template
 
 ทดสอบการใช้งานแล้วกับ $\rm{\LaTeX{}2e}$
 
-## ที่มาของ Project
+## ที่มาของ Template
 
-Project นี้ถูกสร้างขึ้นเพื่อเป็นเครื่องมืออำนวยความสะดวกให้กับสมาชิกของห้องแลบวิจัย CNC
+Template นี้ถูกสร้างขึ้นเพื่อเป็นเครื่องมืออำนวยความสะดวกให้กับสมาชิกของห้องแลบวิจัย CNC
 ในการใช้ $\rm{\LaTeX}$ สร้างสรรค์ผลงานทางวิชาการ
 
 **Communications, Analytics, and Cloud Research Laboratory (CNC Lab)**  
@@ -93,10 +93,8 @@ Project นี้ถูกสร้างขึ้นเพื่อเป็น
 
 ## การ Compile และการตั้งค่า Build Steps
 
-> [!NOTE]
->
-> - หากใช้งาน LaTeX Workshop สามารถตรวจสอบบันทึก (logs) การ compile ได้ที่ **Output** pane ของ VS Code หรือใช้คีย์ลัด (<kbd>Shift</kbd>+<kbd>Command</kbd>+<kbd>U</kbd> (Mac) / <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>U</kbd> (Windows/Linux)) แล้วเลือก **LaTeX Compiler**
-> -
+> [!NOTE]  
+> หากใช้งาน LaTeX Workshop สามารถตรวจสอบบันทึก (logs) การ compile ได้ที่ **Output** pane ของ VS Code หรือใช้คีย์ลัด (<kbd>Shift</kbd>+<kbd>Command</kbd>+<kbd>U</kbd> (Mac) / <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>U</kbd> (Windows/Linux)) แล้วเลือก **LaTeX Compiler**
 
 ### การ Compile
 
