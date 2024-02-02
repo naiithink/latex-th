@@ -144,16 +144,17 @@ Template นี้อาศัย VS Code extension ที่ชื่อว่�
     ```
 
 - สามารถลบไฟล์ auxiliary ต่าง ๆ ที่ถูกสร้างขึ้นมาระหว่างที่ build ได้โดยเรียกคำสั่ง **LaTeX Workshop: Clean up auxiliary files** ผ่าน VS Code Command Palette หรือด้วยคีย์ลัด (<kbd>Option</kbd>+<kbd>Command</kbd>+<kbd>C</kbd> (Mac) / <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>C</kbd> (Windows/Linux))
+- สามารถยกเลิกการ build ได้โดยเรียกคำสั่ง **LaTeX Workshop: Kill LaTeX compiler process** ผ่าน VS Code Command Palette
 
 ## คำสั่งและคีย์ลัดพื้นฐาน[^4]
 
-| การกระทำ                                              | VS Code Command Palette                     | Mac                                                                    | Windows/Linux                                                       |
+| การกระทำ                                              | VS Code Command Palette                     | Shortcuts (Mac)                                                        | Shortcuts (Windows/Linux)                                           |
 | :---------------------------------------------------- | :------------------------------------------ | :--------------------------------------------------------------------- | :------------------------------------------------------------------ |
 | VS Code Command Palette                               | $\emptyset$                                 | <kbd>Shift</kbd>+<kbd>Command</kbd>+<kbd>P</kbd>                       | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>                       |
 | เปิด `.vscode/settings.json` (Workspace settings)     | Preferences: Open Workspace Settings (JSON) | $\emptyset$                                                            | $\emptyset$                                                         |
 | VS Code extensions                                    | View: Show Extensions                       | <kbd>Shift</kbd>+<kbd>Command</kbd>+<kbd>X</kbd>                       | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>X</kbd>                       |
 | Build $\rm{\LaTeX}$ project                           | LaTeX Workshop: Build LaTeX project         | <kbd>Option</kbd>+<kbd>Command</kbd>+<kbd>B</kbd>                      | <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>B</kbd>                         |
-| เลิกการ build (Kill compiler process)                 | LaTeX Workshop: Kill LaTeX compiler process | $\emptyset$                                                            | $\emptyset$                                                         |
+| ยกเลิกการ build (Kill compiler process)               | LaTeX Workshop: Kill LaTeX compiler process | $\emptyset$                                                            | $\emptyset$                                                         |
 | ลบไฟล์ auxiliary ต่าง ๆ                               | LaTeX Workshop: Clean up auxiliary files    | <kbd>Option</kbd>+<kbd>Command</kbd>+<kbd>C</kbd>                      | <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>C</kbd>                         |
 | ดูบันทึกการ compile (Compiler logs)                   | LaTeX Workshop: View LaTeX compiler logs    | <kbd>Shift</kbd>+<kbd>Command</kbd>+<kbd>U</kbd> &rarr; LaTeX Compiler | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>U</kbd> &rarr; LaTeX Compiler |
 | [**Codespaces**] หยุดการทำงานของ Codespace            | Codespaces: Stop Codespace                  | $\emptyset$                                                            | $\emptyset$                                                         |
