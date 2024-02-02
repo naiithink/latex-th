@@ -85,6 +85,11 @@ $\rm{\LaTeX}$ Repository Template
 
 ## การ Compile และการตั้งค่า Build Steps
 
+> [!NOTE]
+>
+> - หากใช้งาน LaTeX Workshop สามารถตรวจสอบบันทึก (logs) การ compile ได้ที่ **Output** pane ของ VS Code หรือใช้คีย์ลัด (<kbd>Shift</kbd>+<kbd>Command</kbd>+<kbd>U</kbd> (Mac) / <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>U</kbd> (Windows/Linux)) แล้วเลือก **LaTeX Compiler**
+> -
+
 ### การ Compile
 
 โดยทั่วไป สามารถ compile/build $\rm{\LaTeX}$ projects ได้ด้วยวิธีต่อไปนี้
@@ -140,6 +145,22 @@ Template นี้อาศัย VS Code extension ที่ชื่อว่�
 
 - สามารถลบไฟล์ auxiliary ต่าง ๆ ที่ถูกสร้างขึ้นมาระหว่างที่ build ได้โดยเรียกคำสั่ง **LaTeX Workshop: Clean up auxiliary files** ผ่าน VS Code Command Palette หรือด้วยคีย์ลัด (<kbd>Option</kbd>+<kbd>Command</kbd>+<kbd>C</kbd> (Mac) / <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>C</kbd> (Windows/Linux))
 
+## คำสั่งและคีย์ลัดพื้นฐาน[^4]
+
+| การกระทำ                                              | VS Code Command Palette                     | Mac                                                                    | Windows/Linux                                                       |
+| :---------------------------------------------------- | :------------------------------------------ | :--------------------------------------------------------------------- | :------------------------------------------------------------------ |
+| VS Code Command Palette                               | $\emptyset$                                 | <kbd>Shift</kbd>+<kbd>Command</kbd>+<kbd>P</kbd>                       | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>                       |
+| เปิด `.vscode/settings.json` (Workspace settings)     | Preferences: Open Workspace Settings (JSON) | $\emptyset$                                                            | $\emptyset$                                                         |
+| VS Code extensions                                    | View: Show Extensions                       | <kbd>Shift</kbd>+<kbd>Command</kbd>+<kbd>X</kbd>                       | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>X</kbd>                       |
+| Build $\rm{\LaTeX}$ project                           | LaTeX Workshop: Build LaTeX project         | <kbd>Option</kbd>+<kbd>Command</kbd>+<kbd>B</kbd>                      | <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>B</kbd>                         |
+| เลิกการ build (Kill compiler process)                 | LaTeX Workshop: Kill LaTeX compiler process | $\emptyset$                                                            | $\emptyset$                                                         |
+| ลบไฟล์ auxiliary ต่าง ๆ                               | LaTeX Workshop: Clean up auxiliary files    | <kbd>Option</kbd>+<kbd>Command</kbd>+<kbd>C</kbd>                      | <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>C</kbd>                         |
+| ดูบันทึกการ compile (Compiler logs)                   | LaTeX Workshop: View LaTeX compiler logs    | <kbd>Shift</kbd>+<kbd>Command</kbd>+<kbd>U</kbd> &rarr; LaTeX Compiler | <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>U</kbd> &rarr; LaTeX Compiler |
+| [**Codespaces**] หยุดการทำงานของ Codespace            | Codespaces: Stop Codespace                  | $\emptyset$                                                            | $\emptyset$                                                         |
+| [**Dev Containers**] เปิด project ใน container        | Remote-Containers: Reopen in Container      | $\emptyset$                                                            | $\emptyset$                                                         |
+| [**Dev Containers**] เปลี่ยนไปใช้งานนอก Dev Container | Dev Containers: Reopen Folder Locally       | $\emptyset$                                                            | $\emptyset$                                                         |
+| [**Dev Containers**] ปิด project                      | Remote: Close Remote Connection             | $\emptyset$                                                            | $\emptyset$                                                         |
+
 ## ข้อมูลเพิ่มเติม
 
 ### LaTeX Workshop (VS Code Extension)
@@ -147,7 +168,7 @@ Template นี้อาศัย VS Code extension ที่ชื่อว่�
 #### Compiling Features[^5]
 
 > [!CAUTION]  
-> โดยค่าเริ่มต้น Magic Comments จะถูกปิดใช้งานด้วยเหตุผลด้านความปลอดภัย[^4]
+> โดยค่าเริ่มต้น Magic Comments จะถูกปิดใช้งานด้วยเหตุผลด้านความปลอดภัย[^6]
 
 คุณสามารถเลือก $\rm{\LaTeX}$ compiler ได้ผ่าน
 
@@ -174,5 +195,9 @@ Template นี้อาศัย VS Code extension ที่ชื่อว่�
     https://containers.dev/,  
      https://code.visualstudio.com/docs/devcontainers/containers
 
-[^4]: https://github.com/James-Yu/LaTeX-Workshop/issues/3027
+[^4]:
+    https://code.visualstudio.com/docs/getstarted/keybindings,  
+    https://github.com/James-Yu/LaTeX-Workshop/wiki/Snippets
+
 [^5]: https://github.com/James-Yu/LaTeX-Workshop/wiki/Compile
+[^6]: https://github.com/James-Yu/LaTeX-Workshop/issues/3027
