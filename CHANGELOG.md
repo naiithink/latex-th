@@ -1,5 +1,17 @@
 # $\rm{\LaTeX}$-th Changelog
 
+## 2.0.0
+
+### Changes
+
+- Switched base image to [`texlive/texlive`](https://gitlab.com/islandoftex/images/texlive)
+- `texlive` default user with `sudo` permissions
+- Added `TH Sarabun New` to system fonts
+- Directory changes
+  - Renamed `_test/` to `example/`, this is my approach to a cleaner, more conventional directory naming
+  - Renamed `_tex/` to `.latex-th/`, this is my approach to a cleaner, more conventional directory naming
+  - Removed `_resources/`. The containing fonts were relocated to `.devcontainer/assets/fonts/`
+
 ## 1.2.0
 
 ### Changes

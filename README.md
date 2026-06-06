@@ -1,20 +1,10 @@
 # $\rm{\LaTeX}$-th
 
-> VS Code Dev Containers + Alpine image + $\rm{\TeX}$ Live (APK package)
+> Dev Container + [texlive image](https://gitlab.com/islandoftex/images/texlive) from [Island of $\TeX$](https://gitlab.com/islandoftex)
 
 $\rm{\LaTeX}$ Repository Template
 
 ![tex-hero.png](.latex-th/assets/images/tex-hero.png)
-
-ทดสอบการใช้งานแล้วกับ $\rm{\LaTeX{}2e}$
-
-## ที่มาของ Template
-
-Template นี้ถูกสร้างขึ้นเพื่อเป็นเครื่องมืออำนวยความสะดวกให้กับสมาชิกของห้องแลบวิจัย CNC
-ในการใช้ $\rm{\LaTeX}$ สร้างสรรค์ผลงานทางวิชาการ
-
-**Communications, Analytics, and Cloud Research Laboratory (CNC Lab)**  
-ภาควิชาวิทยาการคอมพิวเตอร์ คณะวิทยาศาสตร์ มหาวิทยาลัยเกษตรศาสตร์ ประเทศไทย
 
 ## เริ่มต้น
 
@@ -67,14 +57,14 @@ Template นี้ถูกสร้างขึ้นเพื่อเป็�
 
 ## การทดสอบการใช้งาน
 
-1.  เปิดไฟล์ทดสอบ `_test/hello.tex`
+1.  เปิดไฟล์ทดสอบ `example/hello.tex`
 
     > หากเปิดใช้งานคำสั่ง `code` ของ VS Code ไว้ สามารถใช้คำสั่งด้านล่างนี้
     >
-    >     $ code _test/hello.tex
+    >     $ code example/hello.tex
 
 1.  Compile ไฟล์ทดสอบด้วยการกดปุ่ม run หรือเรียกคำสั่ง **LaTeX Workshop: Build LaTeX Project** ผ่าน VS Code Command Palette หรือด้วยคีย์ลัด (<kbd>Option</kbd>+<kbd>Command</kbd>+<kbd>B</kbd> (Mac) / <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>B</kbd> (Windows/Linux))
-1.  หาก compile เสร็จสมบูรณ์ ควรจะได้ `_test/hello.pdf` ที่ไม่ว่างเปล่า (not blank)
+1.  หาก compile เสร็จสมบูรณ์ ควรจะได้ `example/hello.pdf` ที่ไม่ว่างเปล่า (not blank)
 
 ## เมื่อต้องการหยุดใช้งาน
 
@@ -124,25 +114,28 @@ Template นี้อาศัย VS Code extension ที่ชื่อว่�
 
       "latex-workshop.latex.tools": [
         {
-          // ใช้สำหรับเรียกคำสั่ง xelatex ด้วย option -shell-escape
-          "name": "xelatexsh",
+          // ใช้สำหรับเรียกคำสั่ง xelatex
+          "name": "xelatex",
           "command": "xelatex",
-          "args": ["-shell-escape", "-pdf", "%DOC%"]
-        }
+          "args": [
+              "-synctex=1",
+              "-interaction=nonstopmode",
+              "-file-line-error",
+              "%DOC%"
+          ]
+        },
+        ...
       ],
       "latex-workshop.latex.recipes": [
+        {
+          "name": "xelatex × 3",
+          "tools": ["xelatex", "xelatex", "xelatex"]
+        },
         {
           "name": "xelatex ➞ bibtex ➞ xelatex × 2",
           "tools": ["xelatex", "bibtex", "xelatex", "xelatex"]
         },
-        {
-          "name": "xelatexsh × 3",
-          "tools": ["xelatexsh", "xelatexsh", "xelatexsh"]
-        },
-        {
-          "name": "xelatexsh ➞ bibtex ➞ xelatexsh × 2",
-          "tools": ["xelatexsh", "bibtex", "xelatexsh", "xelatexsh"]
-        }
+        ...
       ],
 
       ...
