@@ -1,33 +1,11 @@
 {
-	"name": "TeX",
-	"image": "naiithink/latex-th:1.2.0",
-	// "build": {
-	// 	"dockerfile": "Dockerfile",
-	// 	"args": {
-	// 		"VARIANT": "alpine"
-	// 	}
-	// },
+	"name": "TeX Live",
+	"dockerFile": "Dockerfile",
 	"customizations": {
 		"vscode": {
-			"settings": {
-				"terminal.integrated.defaultProfile.linux": "zsh",
-				"terminal.integrated.profiles.linux": {
-					"bash": {
-						"path": "/usr/bin/bash",
-						"icon": "terminal-bash"
-					},
-					"zsh": {
-						"path": "/usr/bin/zsh"
-					}
-				}
-			},
 			"extensions": [
-				"ms-vscode-remote.remote-containers",
 				"James-Yu.latex-workshop"
 			]
 		}
-	},
-	// "forwardPorts": [],
-	"postCreateCommand": "sh ./.devcontainer/scripts/postCreateCommand.sh",
-	"remoteUser": "vscode"
+	}
 }

@@ -1,18 +1,11 @@
-ARG     VARIANT="alpine"
-FROM    mcr.microsoft.com/vscode/devcontainers/base:${VARIANT}
+FROM    registry.gitlab.com/islandoftex/images/texlive:latest
 
-ARG     APK_OPTS="--no-cache"
+RUN     mkdir -p /usr/local/share/fonts
+COPY    assets/fonts/* /usr/local/share/fonts/
+RUN     fc-cache -f
 
-RUN     apk -U upgrade
+COPY    resources/fonts/fontspec/* /usr/local/texlive/texmf-local/tex/latex/local/
+RUN     mktexlsr
 
-# Install dependencies
-RUN     apk add ${APK_OPTS} texlive-full \
-            python3 \
-            ruby \
-            py3-pygments
-
-# Useful packages
-# RUN     apk add ${APK_OPTS} ghostscript graphviz imagemagick pandoc
-
-# Cleanup
-RUN     apk cache clean
+USER    texlive
+WORKDIR /home/texlive

@@ -1,10 +1,8 @@
 # -*- coding: utf-8; mode: text; -*-
-
-# The Template
-!_resources/
-!_test/
-!_tex/
-_test/*.pdf
+# Project files
+!.latex-th/
+!example/
+example/*.pdf
 
 # Binaries
 [._]bin/

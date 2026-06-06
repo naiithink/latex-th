@@ -4,7 +4,7 @@
 
 $\rm{\LaTeX}$ Repository Template
 
-![tex-hero.png](_tex/assets/images/tex-hero.png)
+![tex-hero.png](.latex-th/assets/images/tex-hero.png)
 
 ทดสอบการใช้งานแล้วกับ $\rm{\LaTeX{}2e}$
 
@@ -25,16 +25,16 @@ Template นี้ถูกสร้างขึ้นเพื่อเป็�
 > [!CAUTION]  
 > Codespace อาจถูกลบโดยอัตโนมัติเมื่อไม่ได้ถูกใช้งานเป็นระยะเวลาหนึ่ง[^2]
 
-![tex-codespaces.png](_tex/assets/images/tex-codespaces.png)
+![tex-codespaces.png](.latex-th/assets/images/tex-codespaces.png)
 
 1. สร้าง repository ใหม่บน GitHub โดยใช้ template นี้
 1. ที่ repository ที่สร้างใหม่ กดปุ่ม **Code** &rarr; **Codespaces** &rarr; **Create codespace on main**
 
-   ![setting-up-codespace-01.png](_tex/assets/images/setting-up-codespace-01.png)
+   ![setting-up-codespace-01.png](.latex-th/assets/images/setting-up-codespace-01.png)
 
 1. รอจน Codespace ถูกตั้งค่าจนเสร็จแล้วเริ่มใช้งานได้เลย
 
-   ![setting-up-codespace-02.png](_tex/assets/images/setting-up-codespace-02.png)
+   ![setting-up-codespace-02.png](.latex-th/assets/images/setting-up-codespace-02.png)
 
 ### VS Code Dev Containers[^3]
 
@@ -61,7 +61,7 @@ Template นี้ถูกสร้างขึ้นเพื่อเป็�
 1.  เรียก VS Code Command Palette (<kbd>Shift</kbd>+<kbd>Command</kbd>+<kbd>P</kbd> (Mac) / <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> (Windows/Linux))
     แล้วเลือกคำสั่ง **Remote-Containers: Reopen in Container**
 
-    ![reincon.png](_tex/assets/images/reincon.png)
+    ![reincon.png](.latex-th/assets/images/reincon.png)
 
 1.  รอจน container ถูกตั้งค่าจนเสร็จแล้วเริ่มใช้งานได้เลย
 
@@ -87,7 +87,7 @@ Template นี้ถูกสร้างขึ้นเพื่อเป็�
 
 - หากต้องการเปลี่ยนไปใช้งานนอก Dev Container ให้เรียกคำสั่ง **Dev Containers: Reopen Folder Locally** ผ่าน VS Code Command Palette
 
-  ![refolo.png](_tex/assets/images/refolo.png)
+  ![refolo.png](.latex-th/assets/images/refolo.png)
 
 - หากต้องการหยุดใช้งาน (ปิด project) ให้เรียกคำสั่ง **Remote: Close Remote Connection** ผ่าน VS Code Command Palette
 

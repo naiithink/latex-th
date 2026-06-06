@@ -1,9 +1,14 @@
 {
     // >>> "James-Yu.latex-workshop"
-    "latex-workshop.latex.build.forceRecipeUsage": true,
-    "latex-workshop.latex.autoBuild.run": "never",
+    "latex-workshop.docker.enabled": false,
+    "latex-workshop.docker.image.latex": "registry.gitlab.com/islandoftex/images/texlive:latest",
+    "latex-workshop.docker.path": "docker",
+    // "latex-workshop.latex.build.forceRecipeUsage": false,
+    "latex-workshop.latex.build.enableMagicComments": false,
+    "latex-workshop.latex.autoBuild.run": "onFileChange",
     "latex-workshop.latex.autoBuild.cleanAndRetry.enabled": true,
     "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.latex.recipe.default": "first",
     "latex-workshop.latex.magic.args": [
         "-synctex=1",
         "-interaction=nonstopmode",
@@ -12,11 +17,11 @@
     ],
     "latex-workshop.latex.recipes": [
         {
-            "name": "xelatexsh × 3",
+            "name": "xelatex × 3",
             "tools": [
-                "xelatexsh",
-                "xelatexsh",
-                "xelatexsh"
+                "xelatex",
+                "xelatex",
+                "xelatex"
             ]
         },
         {
@@ -29,12 +34,54 @@
             ]
         },
         {
+            "name": "xelatexsh × 3",
+            "tools": [
+                "xelatexsh",
+                "xelatexsh",
+                "xelatexsh"
+            ]
+        },
+        {
             "name": "xelatexsh ➞ bibtex ➞ xelatexsh × 2",
             "tools": [
                 "xelatexsh",
                 "bibtex",
                 "xelatexsh",
                 "xelatexsh"
+            ]
+        },
+        {
+            "name": "pdflatex × 3",
+            "tools": [
+                "pdflatex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "pdflatex ➞ bibtex ➞ pdflatex × 2",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "pdflatexsh × 3",
+            "tools": [
+                "pdflatexsh",
+                "pdflatexsh",
+                "pdflatexsh"
+            ]
+        },
+        {
+            "name": "pdflatexsh ➞ bibtex ➞ pdflatexsh × 2",
+            "tools": [
+                "pdflatexsh",
+                "bibtex",
+                "pdflatexsh",
+                "pdflatexsh"
             ]
         },
         {
@@ -59,15 +106,6 @@
             "name": "latexmk (xelatex)",
             "tools": [
                 "xelatexmk"
-            ]
-        },
-        {
-            "name": "pdflatex ➞ bibtex ➞ pdflatex × 2",
-            "tools": [
-                "pdflatex",
-                "bibtex",
-                "pdflatex",
-                "pdflatex"
             ]
         },
         {
@@ -138,9 +176,24 @@
             "env": {}
         },
         {
+            "name": "pdflatexsh",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-shell-escape",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
             "name": "bibtex",
             "command": "bibtex",
             "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
                 "%DOCFILE%"
             ],
             "env": {}
@@ -176,7 +229,9 @@
             "name": "tectonic",
             "command": "tectonic",
             "args": [
-                "--synctex",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
                 "--keep-logs",
                 "%DOC%.tex"
             ],
@@ -186,7 +241,9 @@
             "name": "xelatex",
             "command": "xelatex",
             "args": [
-                "-pdf",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
                 "%DOC%"
             ]
         },
@@ -194,11 +251,12 @@
             "name": "xelatexsh",
             "command": "xelatex",
             "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
                 "-shell-escape",
-                "-pdf",
                 "%DOC%"
             ]
         }
-    ]
-    // <<< "James-Yu.latex-workshop"
+    ],    // <<< "James-Yu.latex-workshop"
 }
