@@ -1,5 +1,12 @@
 FROM    registry.gitlab.com/islandoftex/images/texlive:latest
 
+ARG     USER=texlive
+
+RUN     apt-get update \
+        && apt-get install -y sudo \
+        && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers \
+        && usermod -aG sudo ${USER}
+
 RUN     mkdir -p /usr/local/share/fonts
 COPY    assets/fonts/* /usr/local/share/fonts/
 RUN     fc-cache -f
@@ -7,5 +14,5 @@ RUN     fc-cache -f
 COPY    resources/fonts/fontspec/* /usr/local/texlive/texmf-local/tex/latex/local/
 RUN     mktexlsr
 
-USER    texlive
-WORKDIR /home/texlive
+USER    ${USER}
+WORKDIR /home/${USER}
