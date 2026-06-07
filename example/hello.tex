@@ -1,15 +1,14 @@
 \documentclass{article}
 
 \usepackage{blindtext}
-\usepackage{fontspec}
+\usepackage{scrextend}
 \usepackage{geometry}
-\usepackage[Latin,Thai]{ucharclasses}
-\usepackage{xunicode}
 \usepackage{amsmath}
 \usepackage{xcolor}
+\usepackage{graphicx}
 \usepackage{multirow}
 \usepackage{minted}
-\usepackage{polyglossia}
+\usepackage[main=thai]{babel}
 \usepackage{hyperref}
 
 \hypersetup{%
@@ -20,19 +19,13 @@ linkcolor = red}
 a4paper,
 margin = 1in}
 
-\XeTeXlinebreaklocale "th"
-\setdefaultlanguage{english}
-\setotherlanguage[numerals=arabic]{thai}
+\babelprovide[main,import]{thai}
 
-\newfontfamily{\thaifont}{TH Sarabun New}
-\setmainfont{TH Sarabun New}
+\babelfont{rm}[Scale=1.4]{TH Sarabun New}
+\babelfont{sf}[Scale=1.4]{TH Sarabun New}
+\babelfont{tt}{Tlwg Typewriter}
 
-\newenvironment{thailang}
-{\thaifont}
-{}
-
-\setTransitionTo{Thai}{\begin{thailang}}
-\setTransitionFrom{Thai}{\end{thailang}}
+\changefontsizes{10pt}
 
 \setminted{%
 fontfamily=tt,
