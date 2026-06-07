@@ -8,7 +8,7 @@
     "latex-workshop.latex.autoBuild.run": "onFileChange",
     "latex-workshop.latex.autoBuild.cleanAndRetry.enabled": true,
     "latex-workshop.view.pdf.viewer": "tab",
-    "latex-workshop.latex.recipe.default": "first",
+    "latex-workshop.latex.recipe.default": "latexmk (xelatex)",
     "latex-workshop.latex.magic.args": [
         "-synctex=1",
         "-interaction=nonstopmode",
@@ -16,74 +16,6 @@
         "%DOC%"
     ],
     "latex-workshop.latex.recipes": [
-        {
-            "name": "xelatex × 3",
-            "tools": [
-                "xelatex",
-                "xelatex",
-                "xelatex"
-            ]
-        },
-        {
-            "name": "xelatex ➞ bibtex ➞ xelatex × 2",
-            "tools": [
-                "xelatex",
-                "bibtex",
-                "xelatex",
-                "xelatex"
-            ]
-        },
-        {
-            "name": "xelatexsh × 3",
-            "tools": [
-                "xelatexsh",
-                "xelatexsh",
-                "xelatexsh"
-            ]
-        },
-        {
-            "name": "xelatexsh ➞ bibtex ➞ xelatexsh × 2",
-            "tools": [
-                "xelatexsh",
-                "bibtex",
-                "xelatexsh",
-                "xelatexsh"
-            ]
-        },
-        {
-            "name": "pdflatex × 3",
-            "tools": [
-                "pdflatex",
-                "pdflatex",
-                "pdflatex"
-            ]
-        },
-        {
-            "name": "pdflatex ➞ bibtex ➞ pdflatex × 2",
-            "tools": [
-                "pdflatex",
-                "bibtex",
-                "pdflatex",
-                "pdflatex"
-            ]
-        },
-        {
-            "name": "pdflatexsh × 3",
-            "tools": [
-                "pdflatexsh",
-                "pdflatexsh",
-                "pdflatexsh"
-            ]
-        },
-        {
-            "name": "pdflatexsh ➞ bibtex ➞ pdflatexsh × 2",
-            "tools": [
-                "pdflatexsh",
-                "bibtex",
-                "pdflatexsh",
-                "pdflatexsh"
-            ]
-        },
         {
             "name": "latexmk 🔃",
             "tools": [
@@ -127,7 +59,41 @@
             "tools": [
                 "tectonic"
             ]
-        }
+        },
+        {
+            "name": "pdflatex * 3",
+            "tools": [
+                "pdflatex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "pdflatex ➞ bibtex ➞ pdflatex * 2",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "xelatex * 3",
+            "tools": [
+                "xelatex",
+                "xelatex",
+                "xelatex"
+            ]
+        },
+        {
+            "name": "xelatex ➞ bibtex ➞ xelatex * 2",
+            "tools": [
+                "xelatex",
+                "bibtex",
+                "xelatex",
+                "xelatex"
+            ]
+        },
     ],
     "latex-workshop.latex.tools": [
         {
@@ -157,6 +123,19 @@
             "env": {}
         },
         {
+            "name": "xelatexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-xelatex",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
             "name": "latexmk_rconly",
             "command": "latexmk",
             "args": [
@@ -176,24 +155,9 @@
             "env": {}
         },
         {
-            "name": "pdflatexsh",
-            "command": "pdflatex",
-            "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "-shell-escape",
-                "%DOC%"
-            ],
-            "env": {}
-        },
-        {
             "name": "bibtex",
             "command": "bibtex",
             "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
                 "%DOCFILE%"
             ],
             "env": {}
@@ -217,7 +181,7 @@
             "env": {}
         },
         {
-            "name": "jnw2texmintex",
+            "name": "jnw2texminted",
             "command": "julia",
             "args": [
                 "-e",
@@ -226,37 +190,36 @@
             "env": {}
         },
         {
-            "name": "tectonic",
-            "command": "tectonic",
+            "name": "pnw2tex",
+            "command": "pweave",
             "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "--keep-logs",
-                "%DOC%.tex"
+                "-f",
+                "tex",
+                "%DOC_EXT%"
             ],
             "env": {}
         },
         {
-            "name": "xelatex",
-            "command": "xelatex",
+            "name": "pnw2texminted",
+            "command": "pweave",
             "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "%DOC%"
-            ]
+                "-f",
+                "texminted",
+                "%DOC_EXT%"
+            ],
+            "env": {}
         },
         {
-            "name": "xelatexsh",
-            "command": "xelatex",
+            "name": "tectonic",
+            "command": "tectonic",
             "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "-shell-escape",
-                "%DOC%"
-            ]
+                "--synctex",
+                "--keep-logs",
+                "--print",
+                "%DOC%.tex"
+            ],
+            "env": {}
         }
-    ],    // <<< "James-Yu.latex-workshop"
+    ]
+    // <<< "James-Yu.latex-workshop"
 }
